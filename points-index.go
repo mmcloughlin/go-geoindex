@@ -4,7 +4,6 @@
 package geoindex
 
 import (
-	"fmt"
 	"math"
 	"sort"
 )
@@ -160,8 +159,6 @@ func (points *PointsIndex) KNearest(point Point, k int, maxDistance Meters, acce
 	nearbyPoints := make([]Point, 0)
 	pointEntry := points.index.GetEntryAt(point).(set)
 	nearbyPoints = append(nearbyPoints, getPoints([]interface{}{pointEntry}, accept)...)
-
-	fmt.Println("heyyyyyyyyyyyy")
 
 	totalCount := 0
 	idx := cellOf(point, points.index.resolution)
