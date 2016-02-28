@@ -143,7 +143,7 @@ func (p *sortedPoints) Swap(i, j int) {
 }
 
 func (p *sortedPoints) Less(i, j int) bool {
-	return approximateSquareDistance(p.points[i], p.point) < approximateSquareDistance(p.points[j], p.point)
+	return distance(p.points[i], p.point) < distance(p.points[j], p.point)
 }
 
 func min(a, b int) int {
